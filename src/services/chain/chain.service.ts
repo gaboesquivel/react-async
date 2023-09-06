@@ -34,7 +34,9 @@ export async function someVanillaSeries(){
 }
 
 export async function someVanillaParallel(){
-  return await Promise.all([() => getGenisisHash(), () => getChain()])
+  const result = await Promise.all([getGenisisHash, getChain])
+  console.log(await result)
+  return await result
 }
 
 export async function someVanillaConditional(){
