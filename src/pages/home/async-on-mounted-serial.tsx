@@ -1,9 +1,10 @@
 
-import { useAsyncFn } from "../../hooks/use-async-fn"
+
+import useAsync from "../../hooks/use-async"
 import { someVanillaSeries } from "../../services/chain"
 
 export function AsyncOnMountedSerial(){
-  const genesisHashState = useAsyncFn(someVanillaSeries)
+  const genesisHashState = useAsync(someVanillaSeries)
   
   return <div>
     <h1>Async on Mounted Serial</h1>

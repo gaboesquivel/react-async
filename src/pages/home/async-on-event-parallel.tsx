@@ -8,5 +8,5 @@ export function AsyncOnEnventParallel(){
   return <div>
     <h1>Async on Event in Parallel</h1>
     <button onClick={callFn}>get data in parallel</button>
-    <pre>{JSON.stringify(state)}</pre></div>
+    <pre>{JSON.stringify(state, null, 2)}</pre></div>
 }

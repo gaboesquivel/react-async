@@ -8,5 +8,5 @@ export function AsyncOnEnventSerial(){
   return <div>
     <h1>Async on Event Serially</h1>
     <button onClick={callFn}>get data serially</button>
-    <pre>{JSON.stringify(state)}</pre></div>
+    <pre>{JSON.stringify(state, null, 2)}</pre></div>
 }

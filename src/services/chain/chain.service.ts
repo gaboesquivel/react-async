@@ -18,24 +18,22 @@ export async function getLatestHeader() {
   return api.rpc.chain.getHeader();
 }
 
-export async function getValidators(){
-  const api = await getApi()
-  return api.query.staking.validators.keys()
-}
-
 export async function getGenisisHash(){
   const api = await getApi()
   return api.genesisHash.toHex()
 }
 
 export async function someVanillaSeries(){
-  const tasks = [() => getChain(), () => getGenisisHash(), () => getValidators(), () => getChain()];
+  const tasks = [
+    getChain, 
+    getGenisisHash, 
+    getChain
+  ];
   return executePromisesInSeries(tasks)
 }
 
 export async function someVanillaParallel(){
-  const result = await Promise.all([getGenisisHash, getChain])
-  console.log(await result)
+  const result = await Promise.all([getGenisisHash(), getChain()])
   return await result
 }
 
